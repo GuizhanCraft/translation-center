@@ -1,0 +1,17 @@
+repos:
+  - owner: GuizhanCraft
+    repo: FastMachines
+    branch: master
+    folder: FastMachines
+    files:
+      - source: "src/main/resources/lang/en-US.yml"
+        name: "en-US.yml"
+        target: "src/main/resources/lang/{lang}.yml"
+  - owner: GuizhanCraft
+    repo: GuizhanCraft
+    branch: master
+    folder: GuizhanCraft
+    files:
+      - source: "src/main/resources/lang/en-US.yml"
+        name: "en-US.yml"
+        target: "src/main/resources/lang/{lang}.yml"

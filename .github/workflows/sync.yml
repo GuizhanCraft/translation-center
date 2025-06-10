@@ -1,0 +1,32 @@
+name: Translation Sync
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'config/repos.yml'
+      - 'translations/**'
+
+jobs:
+  sync:
+    name: Sync translations
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup UV
+        uses: astral-sh/setup-uv@v6
+        with:
+            version: "latest"
+        
+      - name: Run script
+        working-directory: script
+        run: uv run script
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          
