@@ -9,10 +9,13 @@ import re
 import ssl
 import subprocess
 from pathlib import Path
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 from urllib.request import urlopen
 from urllib.error import URLError, HTTPError
-from ruamel.yaml import YAML, LiteralScalarString
+from ruamel.yaml import YAML
+from ruamel.yaml.scalarstring import LiteralScalarString
+
+from .config import Config, RepoConfig, FileConfig
 
 
 def get_translations_dir() -> Path:
