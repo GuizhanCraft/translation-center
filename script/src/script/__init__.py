@@ -17,13 +17,14 @@ def main() -> None:
         config = load_repos_config()
         validate_config(config)
         print(f"Loaded configuration with {len(config['repos'])} repositories.")
-        
+
         # Part 2: Pull the latest source files.
         print("\nPulling translation files...")
         from .pull import pull_all_repos
+
         pull_all_repos(config)
         print("Pull operation completed.")
-        
+
     except Exception as e:
         print(f"Unexpected Error: {e}")
         raise
