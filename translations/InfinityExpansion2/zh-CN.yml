@@ -1,0 +1,12 @@
+items:
+  _UI_WIKI:
+    name: "&eWiki"
+  _UI_DISABLED:
+    name: "&c已禁用"
+  _UI_DISABLED_IN_WORLD:
+    name: "&c已禁用"
+  _UI_DISPLAY_RECIPES:
+    name: "&e点击以显示配方"
+  QUARRY:
+    lore-overrides:
+      4: "%sftrlore_Speed_1%"
