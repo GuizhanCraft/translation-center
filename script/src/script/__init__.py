@@ -1,30 +1,39 @@
+#!/usr/bin/env python3
 """
-Translation center automation script.
-This script manages translation files across multiple GitHub repositories.
+Translation center script package.
 """
 
+import sys
 from .config import load_repos_config, validate_config
-from .pull import pull_all_repos
+from .pull_sources import pull_sources
+from .pull_translations import pull_translations
 
 
 def main() -> None:
     """
-    Main entry point for the script.
-    This function is called when the script is executed.
+    Main entry point for the script package.
     """
-    try:
-        # Part 1: Load configuration
-        print("Loading configuration...")
-        config = load_repos_config()
-        validate_config(config)
-        print(f"Loaded configuration with {len(config['repos'])} repositories.")
+    # Load configuration
+    config = load_repos_config()
+    validate_config(config)
 
-        # Part 2: Pull the latest source files.
-        print("\nPulling translation files...")
-
-        pull_all_repos(config)
-        print("Pull operation completed.")
-
-    except Exception as e:
-        print(f"Unexpected Error: {e}")
-        raise
+    # Check command line arguments
+    if len(sys.argv) > 1:
+        command = sys.argv[1]
+        if command == "pull_sources":
+            pull_sources(config)
+        elif command == "pull_translations":
+            pull_translations(config)
+        elif command == "list":
+            print("Configuration is valid!")
+            print(f"Loaded {len(config['repos'])} repositories.")
+            for repo in config["repos"]:
+                print(
+                    f"  - {repo['owner']}/{repo['repo']} ({len(repo['files'])} files)"
+                )
+        else:
+            print(f"Unknown command: {command}")
+            print("Available commands: pull_sources, pull_translations, list")
+    else:
+        print("Unknown command: ")
+        print("Available commands: pull_sources, pull_translations, list")

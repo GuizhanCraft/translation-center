@@ -6,6 +6,7 @@ This module handles loading and validating configuration from config files.
 from pathlib import Path
 from typing import List, TypedDict
 from ruamel.yaml import YAML
+from .common import get_project_root_dir
 
 
 class FileConfig(TypedDict):
@@ -39,9 +40,7 @@ def get_config_path() -> Path:
     Returns:
         Path: The path to the configuration directory.
     """
-    # Get the root directory of the project
-    script_dir = Path(__file__).resolve().parent.parent.parent.parent
-    return script_dir / "config"
+    return get_project_root_dir() / "config"
 
 
 def load_repos_config() -> Config:
