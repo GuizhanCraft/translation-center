@@ -1,0 +1,8 @@
+console:
+  load:
+    language: "正在加载语言：{0}"
+    integrations: "加载关联插件中..."
+    integration: "检测到 {0}，正在加载插件关联..."
+items:
+  GROWTH_CHAMBER:
+    name: "&e成长室"
