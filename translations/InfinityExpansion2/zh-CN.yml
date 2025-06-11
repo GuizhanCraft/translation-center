@@ -71,12 +71,22 @@ items:
     name: "&c电力不足"
   _UI_INVALID_INPUT:
     name: "&c无效输入"
+  _UI_DISABLED:
+    name: "&c已禁用"
+    lore: |-
+      &7此机器已禁用。
+  _UI_DISABLED_IN_WORLD:
+    name: "&c已禁用"
+    lore: |-
+      &7此机器在这个世界中被禁用。
   _UI_SUCCESS:
     name: "&a成功！"
   _UI_PROGRESS:
     name: "&e进度："
   _UI_CRAFT:
     name: "&e点击合成"
+  _UI_DISPLAY_RECIPES:
+    name: "&e点击以显示配方"
   _UI_WORLD_NORMAL:
     name: "&2主世界"
   _UI_WORLD_NETHER:
@@ -187,6 +197,10 @@ items:
       &e点击&7切换
   _GUIDE_INTRO:
     name: "&e介绍"
+  _GUIDE_INFO:
+    name: "&e信息"
+  _GUIDE_INFO_FIELDS:
+    name: "&e信息字段"
   IRON_SINGULARITY:
     name: "&7铁奇点"
   GOLD_SINGULARITY:
@@ -329,6 +343,9 @@ items:
       &8⇨ &e⚡ &716,000,000 J 可储存
   INFINITY_CAPACITOR:
     name: "&b无尽电容"
+    lore: |2-
+
+      &8⇨ &e⚡ &7128,000,000 J 可储存
   ADVANCED_ENCHANTER:
     name: "&c高级附魔机"
     lore: |2-
@@ -969,6 +986,10 @@ items:
   OSCILLATOR:
     name: "&6加速器"
 lores:
+  guide:
+    back:
+      previous: "&f点击&7: 返回到前一页面"
+      main: "&fShift + 点击&7: 返回到主页面"
   collect: "&7收集："
   produce: "&7生产："
   info: "&7信息："
@@ -978,6 +999,10 @@ lores:
     item: "&a存储的物品：&7{0}"
     amount: "&b数量：&7{0}"
     void-excess: "&e存满清空输入：&7{0}"
+researches:
+  harvesting_void: "收获虚空"
+  infinity_gear: "无限装备"
+  singularities: "创建奇点"
 messages:
   commands:
     no-permission: "&c你没有使用此命令的权限。"
@@ -993,6 +1018,9 @@ messages:
     printitem:
       description: "打印手中的物品。"
       no-item: "&c你必须手持一个物品！"
+    id:
+      description: "获取手上物品的 Slimefun ID。"
+      message: "&7您手中的物品的 Slimefun 项目是 &f{0}&7, ID为：(点击下面的 ID 复制)"
   vein-miner:
     applied: "&a矿脉矿工已应用于该物品。"
     no-hunger: "&c你的饥饿度不足以进行该操作。"
