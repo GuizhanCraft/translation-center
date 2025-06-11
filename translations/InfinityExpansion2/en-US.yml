@@ -1,0 +1,1077 @@
+items:
+  _IG_MAIN:
+    name: "&k-&bInfinity&4Expansion&a&l2&k-"
+  _IG_MATERIALS:
+    name: "&k.&bI&4E&a&l2&k. &a- &7Materials"
+  _IG_SINGULARITIES:
+    name: "&k.&bI&4E&a&l2&k. &a- &aSingularities"
+  _IG_SLIMEFUN_EXPANSION:
+    name: "&k.&bI&4E&a&l2&k. &a- &dSlimefun Expansion"
+  _IG_FOOD:
+    name: "&k.&bI&4E&a&l2&k. &a- &eFood"
+  _IG_TOOLS:
+    name: "&k.&bI&4E&a&l2&k. &a- &6Tools"
+  _IG_GEAR:
+    name: "&k.&bI&4E&a&l2&k. &a- &2Gear"
+  _IG_MACHINES:
+    name: "&k.&bI&4E&a&l2&k. &a- &9Machines"
+  _IG_GENERATORS:
+    name: "&k.&bI&4E&a&l2&k. &a- &cGenerators"
+  _IG_MOB_SIMULATION:
+    name: "&k.&bI&4E&a&l2&k. &a- &bMob Simulation"
+  _IG_STORAGE:
+    name: "&k.&bI&4E&a&l2&k. &a- &6Storage"
+  _IG_HIDDEN:
+    name: "&k.&bI&4E&a&l2&k. &a- &4Hidden items"
+  _RECIPE_VOID_HARVESTER:
+    name: "&8Void Harvester"
+    lore: |-
+      &7Harvests resources from the void.
+  _RECIPE_INFINITY_WORKBENCH:
+    name: "&6Infinity Workbench"
+    lore: |-
+      &7You are here because you enter this page
+      &7from Slimefun's search result.
+
+      &cThe recipe displayed here is incorrect and incomplete.
+      &cCheck the correct recipe from InfinityExpansion 2 guide,
+      &cor hold the item and use command &e/ie2 guide&c.
+  _RECIPE_SINGULARITY_CONSTRUCTOR:
+    name: "&bSingularity Constructor"
+    lore: |-
+      &7Condenses lots of resources
+      &7to create singularities.
+  _RECIPE_MOB_DATA_INFUSER:
+    name: "&bMob Data Infuser"
+    lore: |-
+      &7Infuses empty mob data card
+      &7with mob items.
+  _RECIPE_STORAGE_FORGE:
+    name: "&6Storage Forge"
+    lore: |-
+      &7Craft and upgrade Storage Units.
+      &7Items are kept when upgrading.
+  _UI_GUIDE:
+    name: "&aIn-game Guide"
+    lore: |2-
+
+      &7⇨ &aClick to open
+  _UI_WIKI:
+    name: "&eWiki"
+    lore: |2-
+
+      &7⇨ &aClick to open
+  _UI_COLLECTING:
+    name: "&aCollecting..."
+  _UI_PRODUCING:
+    name: "&aProducing..."
+  _UI_NO_ROOM:
+    name: "&cNot enough room"
+  _UI_NO_POWER:
+    name: "&cInsufficient power"
+  _UI_INVALID_INPUT:
+    name: "&cInvalid input"
+  _UI_DISABLED:
+    name: "&cDisabled"
+    lore: |-
+      &7This machine is disabled.
+  _UI_DISABLED_IN_WORLD:
+    name: "&cDisabled"
+    lore: |-
+      &7This machine is disabled in this world.
+  _UI_SUCCESS:
+    name: "&aSuccess!"
+  _UI_PROGRESS:
+    name: "&eProgress:"
+  _UI_CRAFT:
+    name: "&eClick to craft"
+  _UI_DISPLAY_RECIPES:
+    name: "&eClick to display recipes"
+  _UI_WORLD_NORMAL:
+    name: "&2Normal world"
+  _UI_WORLD_NETHER:
+    name: "&4Nether"
+  _UI_WORLD_THE_END:
+    name: "&5The End"
+  _UI_PRODUCES:
+    name: "&aProduces:"
+  _UI_RECIPES:
+    name: "&eRecipes:"
+  _UI_TICK_RATE:
+    name: "&eTick rate:"
+  _UI_ENERGY_CONSUMPTION:
+    name: "&eEnergy consumption:"
+  _UI_ENERGY_PRODUCTION:
+    name: "&eEnergy production:"
+  _UI_OUTPUT_INTERVAL:
+    name: "&eOutput interval:"
+  _UI_PROGRESS_TOTAL:
+    name: "&eTotal progress required:"
+  _UI_PROGRESS_INCREASE:
+    name: "&eIncrease progress:"
+  _UI_CHANCE:
+    name: "&eChance:"
+  _UI_SF_ITEM:
+    name: "&eSlimefun items:"
+  _UI_EXPERIENCE:
+    name: "&eExperiences:"
+  _UI_OSCILLATOR_SLOT:
+    name: "&eOscillator Slot"
+  _UI_POTION_EFFECTS:
+    name: "&ePotion Effects:"
+  _UI_PROTECTION_TYPES:
+    name: "&eProtection Types:"
+  _UI_ANY_STRAINER:
+    name: "&aAny Strainer"
+  _UI_SW_CHANGE:
+    name: "&eClick the item below to change action"
+  _UI_SW_NONE:
+    name: "&cNo action"
+  _UI_SW_FURNACE:
+    name: "&eSmelting"
+  _UI_SW_CRUSH:
+    name: "&eCrushing"
+  _UI_SW_COMPACT:
+    name: "&eCompacting"
+  _UI_SW_TRANSFORM:
+    name: "&eTransforming"
+  _UI_GT_GEAR:
+    name: "&9Put gear here"
+  _UI_GT_MATERIAL:
+    name: "&9Put material here"
+  _UI_GT_NO_SLIMEFUN:
+    name: "&cSlimefun items are not allowed"
+  _UI_AA_MAX_ENCHANTMENT_LEVEL:
+    name: "&eMax enchantment level:"
+  _UI_IR_BORDER_VOID:
+    name: "&7Put &8Void &7Ingot here"
+  _UI_IR_BORDER_INFINITY:
+    name: "&7Put &bInfinity &7Ingot here"
+  _UI_IR_NEED_VOID:
+    name: "&7Need more &8Void &7Ingot"
+  _UI_IR_NEED_INFINITY:
+    name: "&7Need more &bInfinity &7Ingot"
+  _UI_IR_DURATION_VOID:
+    name: "&eVoid Ingot duration (sf ticks):"
+  _UI_IR_DURATION_INFINITY:
+    name: "&eInfinity Ingot duration (sf ticks):"
+  _UI_IR_INFO:
+    name: "&aRunning..."
+    lore-overrides:
+      1: "&eRemaining sf ticks for Infinity Ingot:"
+      3: "&eRemaining sf ticks for Void Ingot:"
+  _UI_ISR_BORDER:
+    name: "&7Put &bInfinity Singularity &7here"
+  _UI_ISR_NEED:
+    name: "&7Need more &bInfinity Singularity"
+  _UI_ISR_DURATION:
+    name: "&eInfinity Singularity duration (sf ticks):"
+  _UI_ISR_INFO:
+    name: "&aRunning..."
+    lore-overrides:
+      1: "&eRemaining sf ticks for Infinity Singularity:"
+  _UI_STORAGE_ACTIONS_INV:
+    name: "&aInventory Actions"
+    lore: |-
+      &eLeft Click &7to deposit from your inventory
+      &eRight Click &7to withdraw to your inventory
+  _UI_STORAGE_NO_ITEM:
+    name: "&cNo item"
+  _UI_STORAGE_CAPACITY:
+    name: "&bItem capacity:"
+  _UI_STORAGE_AMOUNT:
+    name: "&bItem amount:"
+  _UI_STORAGE_VOID_EXCESS_ON:
+    name: "&aVoid Excess: &2ON"
+    lore: |-
+      &7Item input after storage
+      &7is full will be voided
+
+      &eClick &7to toggle
+  _UI_STORAGE_VOID_EXCESS_OFF:
+    name: "&aVoid Excess: &cOFF"
+    lore: |-
+      &7Item input after storage
+      &7is full will &7&lnot &7be voided
+
+      &eClick &7to toggle
+  _GUIDE_INTRO:
+    name: "&eIntroduction"
+    lore: |-
+      &7Welcome to Infinity Expansion 2 (IE2)!
+      &7This guide will help you
+      &7get familiar with IE2's guide
+      &7and of course this addon's content.
+
+      &7If you have played Infinity Expansion before,
+      &7you only need to read the "information" guide.
+  _GUIDE_INFO:
+    name: "&eInformation"
+    lore: |-
+      &7IE2 is more customizable.
+      &7Server owners can change
+      &7a various of attributes of an item,
+      &7including tick rate, energy consumption.
+
+      &7These information will not be displayed
+      &7in the item's lore anymore, but
+      &7in the item's guide menu.
+
+      &7The next guide item shows the fields that
+      &7can be shown in the item's guide menu.
+  _GUIDE_INFO_FIELDS:
+    name: "&eInformation Fields"
+    lore: |-
+      &eTick rate &7(Slimefun tick)
+      &7Determines how often the machine runs.
+      &7i.e. The machine runs every N tick(s).
+
+      &eEnergy consumption
+      &7The amount of energy the machine consumes
+      &7per tick, per second, or per use.
+
+      &eEnergy production
+  IRON_SINGULARITY:
+    name: "&7Iron Singularity"
+  GOLD_SINGULARITY:
+    name: "&6Gold Singularity"
+  LAPIS_SINGULARITY:
+    name: "&9Lapis Singularity"
+  REDSTONE_SINGULARITY:
+    name: "&cRedstone Singularity"
+  QUARTZ_SINGULARITY:
+    name: "&fQuartz Singularity"
+  COPPER_SINGULARITY:
+    name: "&6Copper Singularity"
+  TIN_SINGULARITY:
+    name: "&7Tin Singularity"
+  LEAD_SINGULARITY:
+    name: "&8Lead Singularity"
+  SILVER_SINGULARITY:
+    name: "&7Silver Singularity"
+  ZINC_SINGULARITY:
+    name: "&7Zinc Singularity"
+  ALUMINUM_SINGULARITY:
+    name: "&7Aluminum Singularity"
+  MAGNESIUM_SINGULARITY:
+    name: "&dMagnesium Singularity"
+  DIAMOND_SINGULARITY:
+    name: "&bDiamond Singularity"
+  EMERALD_SINGULARITY:
+    name: "&aEmerald Singularity"
+  NETHERITE_SINGULARITY:
+    name: "&4Netherite Singularity"
+  COAL_SINGULARITY:
+    name: "&8Coal Singularity"
+  INFINITY_SINGULARITY:
+    name: "&bInfinity Singularity"
+  FORTUNE_SINGULARITY:
+    name: "&6Fortune Singularity"
+  MAGIC_SINGULARITY:
+    name: "&5Magic Singularity"
+  EARTH_SINGULARITY:
+    name: "&aEarth Singularity"
+  METAL_SINGULARITY:
+    name: "&8Metal Singularity"
+  ENDER_ESSENCE:
+    name: "&5Ender Essence"
+    lore: |-
+      &8&oFrom the depths of the end...
+  COMPRESSED_COBBLESTONE_1:
+    name: "&7Single Compressed Cobblestone"
+    lore: |-
+      &89 cobblestones combined.
+  COMPRESSED_COBBLESTONE_2:
+    name: "&7Double Compressed Cobblestone"
+    lore: |-
+      &881 cobblestones combined.
+  COMPRESSED_COBBLESTONE_3:
+    name: "&7Triple Compressed Cobblestone"
+    lore: |-
+      &8729 cobblestones combined.
+  COMPRESSED_COBBLESTONE_4:
+    name: "&7Quadruple Compressed Cobblestone"
+    lore: |-
+      &86,561 cobblestones combined.
+  COMPRESSED_COBBLESTONE_5:
+    name: "&7Quintuple Compressed Cobblestone"
+    lore: |-
+      &859,049 cobblestones combined.
+  MAGSTEEL:
+    name: "&4MagSteel"
+  TITANIUM:
+    name: "&7Titanium"
+  MYTHRIL:
+    name: "&bMythril"
+  ADAMANTITE:
+    name: "&dAdamantite"
+  MAGNONIUM:
+    name: "&5Magnonium"
+  VOID_BIT:
+    name: "&8Void Bit"
+    lore: |-
+      &7&oIt feels... empty.
+  VOID_DUST:
+    name: "&8Void Dust"
+    lore: |-
+      &7&oIt is starting to form...
+  VOID_INGOT:
+    name: "&8Void Ingot"
+    lore: |-
+      &7&oThe emptiness of the cosmos
+      &7&oin the palm of your hand.
+  VOID_BLOCK:
+    name: "&8Void Block"
+    lore: |-
+      &7&oMore emptiness than you can handle.
+
+      &dWitherproof
+  INFINITY_INGOT:
+    name: "&bInfinity Ingot"
+    lore: |-
+      &7&oThe fury of the cosmos
+      &7&oin the palm of your hand.
+  MAGSTEEL_PLATE:
+    name: "&4MagSteel Plate"
+    lore: |-
+      &7Machine Component
+  MACHINE_CIRCUIT:
+    name: "&6Machine Circuit"
+    lore: |-
+      &7Machine Component
+  INFINITY_MACHINE_CIRCUIT:
+    name: "&bInfinity &7Machine Circuit"
+    lore: |-
+      &7Machine Component
+  MACHINE_CORE:
+    name: "&fMachine Core"
+    lore: |-
+      &7Machine Component
+  INFINITY_MACHINE_CORE:
+    name: "&bInfinity &fMachine Core"
+    lore: |-
+      &7Machine Component
+  MACHINE_PLATE:
+    name: "&fMachine Plate"
+    lore: |-
+      &7Machine Component
+  VOID_GLASS:
+    name: "&8Void Glass"
+    lore: |-
+      &dWitherproof
+  OSCILLATOR_FRAME:
+    name: "&6Oscillator Frame"
+  UNKNOWN_SMITHING_TEMPLATE:
+    name: "&8Unknown &7Smithing Template"
+    lore: |-
+      &7Is this a normal template
+      &7or just an armor trim?
+  VOID_CAPACITOR:
+    name: "&8Void Capacitor"
+    lore: |2-
+
+      &8⇨ &e⚡ &716,000,000 J Capacity
+  INFINITY_CAPACITOR:
+    name: "&bInfinity Capacitor"
+    lore: |2-
+
+      &8⇨ &e⚡ &7128,000,000 J Capacity
+  ADVANCED_ENCHANTER:
+    name: "&cAdvanced Enchanter"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b5x
+      &8⇨ &e⚡ &7180 J/t
+  INFINITY_ENCHANTER:
+    name: "&bInfinity Enchanter"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b75x
+      &8⇨ &e⚡ &712,000 J/t
+  ADVANCED_DISENCHANTER:
+    name: "&cAdvanced Disenchanter"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b5x
+      &8⇨ &e⚡ &7180 J/t
+  INFINITY_DISENCHANTER:
+    name: "&bInfinity Disenchanter"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b90x
+      &8⇨ &e⚡ &712,000 J/t
+  ADVANCED_CHARGER:
+    name: "&cAdvanced Charger"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b30x
+      &8⇨ &e⚡ &7180 J/t
+  INFINITY_CHARGER:
+    name: "&bInfinity Charger"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b6000x
+      &8⇨ &e⚡ &760,000 J/t
+  ADVANCED_GEO_MINER:
+    name: "&cAdvanced Geo Miner"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b4x
+      &8⇨ &e⚡ &7120 J/t
+  INFINITY_GEO_MINER:
+    name: "&bInfinity Geo Miner"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b64x
+      &8⇨ &e⚡ &712,000 J/t
+  ADVANCED_SMELTERY:
+    name: "&cAdvanced Smeltery"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b12x
+      &8⇨ &e⚡ &7240 J/t
+  VOID_SMELTERY:
+    name: "&8Void Smeltery"
+    lore: |2-
+
+      &8⇨ &e⚡ &7Speed: &b24x
+      &8⇨ &e⚡ &71,200 J/t
+  ADVANCED_NETHER_STAR_REACTOR:
+    name: "&cAdvanced &fNether Star Reactor"
+    lore: |2-
+
+      &fRuns on Nether Stars
+      &8⇨ &bMust be surrounded by Water
+      &8⇨ &bMust be supplied with Nether Ice Coolant Cells
+
+      &8⇨ &e⚡ &790,000 J Capacity
+      &8⇨ &e⚡ &71,800 J/t
+  COSMIC_MEATBALLS:
+    name: "&bCosmic Meatballs"
+    lore: |-
+      &7Provides 5 minutes of Strength II.
+  ULTIMATE_STEW:
+    name: "&6Ultimate Stew"
+    lore: |-
+      &7Provides 5 minutes of Regeneration II.
+  ENDER_FLAME:
+    name: "&c&lEnder Flame"
+  VEIN_MINER_RUNE:
+    name: "&bVein Miner Rune"
+    lore: |-
+      &7Throw this rune on a dropped tool.
+      &7It will be imbued with the power of the rune.
+  STRAINER_BASE:
+    name: "&dStrainer Base"
+    lore: |-
+      &7Put a strainer in,
+      &7and make the base waterlogged
+      &7to start gathering materials from water.
+  POTATO_FISH:
+    name: "&7:&6Potatofish&7:"
+    lore: |-
+      &eLucky
+  STRAINER_1:
+    name: "&9Basic Strainer"
+    lore: |-
+      &7Collects materials from flowing water.
+
+      &7Unbreaking and Mending enchantment
+      &7can increase the durability of this item.
+      &cUnbreakable does not work.
+
+      &7Chance: 30%
+  STRAINER_2:
+    name: "&cAdvanced Strainer"
+    lore: |-
+      &7Collects materials from flowing water.
+
+      &7Unbreaking and Mending enchantment
+      &7can increase the durability of this item.
+      &cUnbreakable does not work.
+
+      &7Chance: 60%
+  STRAINER_3:
+    name: "&bReinforced Strainer"
+    lore: |-
+      &7Collects materials from flowing water.
+
+      &7Unbreaking and Mending enchantment
+      &7can increase the durability of this item.
+      &cUnbreakable does not work.
+
+      &7Chance: 90%
+  INFINITY_PICKAXE:
+    name: "&b&lWorld Breaker"
+    lore: |-
+      &bSoulbound
+  INFINITY_AXE:
+    name: "&b&lNature's Ruin"
+    lore: |-
+      &bSoulbound
+  INFINITY_SHOVEL:
+    name: "&b&lMountain Eater"
+    lore: |-
+      &bSoulbound
+  INFINITY_HOE:
+    name: "&b&lHoe of the Green Earth"
+    lore: |-
+      &bSoulbound
+  INFINITY_FISHING_ROD:
+    name: "&b&lInfinity Rod"
+    lore: |-
+      &bSoulbound
+  INFINITY_MATRIX:
+    name: "&fInfinity Matrix"
+    lore: |
+      &6Provides creative flight
+
+      &7Right-Click to enable/disable and claim
+      &7Crouch and Right-Click to remove ownership
+
+      &bSoulbound
+    lore-replacements:
+      8:
+        replaced: "Owner: "
+  INFINITY_HELMET:
+    name: "&b&lInfinity Crown"
+    lore: |-
+      &bSoulbound
+  INFINITY_CHESTPLATE:
+    name: "&b&lInfinity Chestplate"
+    lore: |-
+      &bSoulbound
+  INFINITY_LEGGINGS:
+    name: "&b&lInfinity Leggings"
+    lore: |-
+      &bSoulbound
+  INFINITY_BOOTS:
+    name: "&b&lInfinity Boots"
+    lore: |-
+      &bSoulbound
+  INFINITY_SHIELD:
+    name: "&b&lCosmic Aegis"
+    lore: |-
+      &bSoulbound
+  INFINITY_SWORD:
+    name: "&b&lBlade of the Cosmos"
+    lore: |-
+      &bSoulbound
+  INFINITY_BOW:
+    name: "&b&lSky Piercer"
+    lore: |-
+      &bSoulbound
+  INFINITY_CROSSBOW:
+    name: "&b&lStar Shooter"
+    lore: |-
+      &bSoulbound
+  COBBLESTONE_GENERATOR:
+    name: "&8Cobblestone Generator"
+    lore: |2-
+
+      &7Produces cobblestone.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  COBBLESTONE_GENERATOR_2:
+    name: "&cAdvanced &8Cobblestone Generator"
+    lore: |2-
+
+      &7Produces cobblestone.
+
+      &8⇨ &e⚡ &7Speed: &b4x
+  COBBLESTONE_GENERATOR_3:
+    name: "&7Void &8Cobblestone Generator"
+    lore: |2-
+
+      &7Produces cobblestone.
+
+      &8⇨ &e⚡ &7Speed: &b16x
+  COBBLESTONE_GENERATOR_4:
+    name: "&bInfinity &8Cobblestone Generator"
+    lore: |2-
+
+      &7Produces cobblestone.
+
+      &8⇨ &e⚡ &7Speed: &b64x
+  VIRTUAL_FARM:
+    name: "&aVirtual Farm"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant crops.
+  VIRTUAL_FARM_2:
+    name: "&cAdvanced &aVirtual Farm"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant crops.
+  VIRTUAL_FARM_3:
+    name: "&7Void &aVirtual Farm"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant crops.
+  VIRTUAL_FARM_4:
+    name: "&bInfinity &aVirtual Farm"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant crops.
+  TREE_GROWER:
+    name: "&2Tree Grower"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant trees.
+  TREE_GROWER_2:
+    name: "&cAdvanced &2Tree Grower"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant trees.
+  TREE_GROWER_3:
+    name: "&7Void &2Tree Grower"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant trees.
+  TREE_GROWER_4:
+    name: "&bInfinity &2Tree Grower"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant trees.
+  FLOWER_GROWER:
+    name: "&dFlower Grower"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant flowers.
+  FLOWER_GROWER_2:
+    name: "&cAdvanced &dFlower Grower"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant flowers.
+  FLOWER_GROWER_3:
+    name: "&7Void &dFlower Grower"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant flowers.
+  FLOWER_GROWER_4:
+    name: "&bInfinity &dFlower Grower"
+    lore: |2-
+
+      &7Automatically grows, harvests,
+      &7and replant flowers.
+  VOID_HARVESTER:
+    name: "&8Void Harvester"
+    lore: |2-
+
+      &7Harvests resources from the void.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  VOID_HARVESTER_2:
+    name: "&cAdvanced &8Void Harvester"
+    lore: |2-
+
+      &7Harvests resources from the void.
+
+      &8⇨ &e⚡ &7Speed: &b16x
+  VOID_HARVESTER_3:
+    name: "&bInfinity &8Void Harvester"
+    lore: |2-
+
+      &7Harvests resources from the void.
+
+      &8⇨ &e⚡ &7Speed: &b64x
+  STONEWORKS_FACTORY:
+    name: "&8Stoneworks Factory"
+    lore: |2-
+
+      &7Generates cobblestone and
+      &7processes it into various materials.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  STONEWORKS_FACTORY_2:
+    name: "&cAdvanced &8Stoneworks Factory"
+    lore: |2-
+
+      &7Generates cobblestone and
+      &7processes it into various materials.
+
+      &8⇨ &e⚡ &7Speed: &b4x
+  STONEWORKS_FACTORY_3:
+    name: "&7Void &8Stoneworks Factory"
+    lore: |2-
+
+      &7Generates cobblestone and
+      &7processes it into various materials.
+
+      &8⇨ &e⚡ &7Speed: &b16x
+  STONEWORKS_FACTORY_4:
+    name: "&bInfinity &8Stoneworks Factory"
+    lore: |2-
+
+      &7Generates cobblestone and
+      &7processes it into various materials.
+
+      &8⇨ &e⚡ &7Speed: &b64x
+  SINGULARITY_CONSTRUCTOR:
+    name: "&fSingularity Constructor"
+    lore: |2-
+
+      &7Condenses lots of resources
+      &7to create singularities.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  SINGULARITY_CONSTRUCTOR_2:
+    name: "&bInfinity &fSingularity Constructor"
+    lore: |2-
+
+      &7Condenses lots of resources
+      &7to create singularities.
+
+      &8⇨ &e⚡ &7Speed: &b64x
+  RESOURCE_SYNTHESIZER:
+    name: "&6Resource Synthesizer"
+    lore: |2-
+
+      &7Combines 2 singularities
+      &7to create resources.
+  OBSIDIAN_GENERATOR:
+    name: "&8Obsidian Generator"
+    lore: |2-
+
+      &7Produces obsidian.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  EXTREME_FREEZER:
+    name: "&bExtreme Freezer"
+    lore: |2-
+
+      &7Used to make coolants.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  DUST_EXTRACTOR:
+    name: "&7Dust Extractor"
+    lore: |2-
+
+      &7Extracts dust from stone variants.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  DUST_EXTRACTOR_2:
+    name: "&cAdvanced &7Dust Extractor"
+    lore: |2-
+
+      &7Extracts dust from stone variants.
+
+      &8⇨ &e⚡ &7Speed: &b2x
+  DUST_EXTRACTOR_3:
+    name: "&8Void &7Dust Extractor"
+    lore: |2-
+
+      &7Extracts dust from stone variants.
+
+      &8⇨ &e⚡ &7Speed: &b8x
+  DUST_EXTRACTOR_4:
+    name: "&bInfinity &7Dust Extractor"
+    lore: |2-
+
+      &7Extracts dust from stone variants.
+
+      &8⇨ &e⚡ &7Speed: &b16x
+  INGOT_FORMER:
+    name: "&7Ingot Former"
+    lore: |2-
+
+      &7Forms ingots from dust.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  INGOT_FORMER_2:
+    name: "&cAdvanced &7Ingot Former"
+    lore: |2-
+
+      &7Forms ingots from dust.
+
+      &8⇨ &e⚡ &7Speed: &b2x
+  INGOT_FORMER_3:
+    name: "&8Void &7Ingot Former"
+    lore: |2-
+
+      &7Forms ingots from dust.
+
+      &8⇨ &e⚡ &7Speed: &b8x
+  INGOT_FORMER_4:
+    name: "&bInfinity &7Ingot Former"
+    lore: |2-
+
+      &7Forms ingots from dust.
+
+      &8⇨ &e⚡ &7Speed: &b16x
+  URANIUM_EXTRACTOR:
+    name: "&2Uranium Extractor"
+    lore: |2-
+
+      &7Extracts uranium from stone variants.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  URANIUM_INGOT_EXTRACTOR:
+    name: "&aUranium Ingot Extractor"
+    lore: |2-
+
+      &7Extracts uranium ingots from stone variants.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  COBBLE_PRESS:
+    name: "&8Cobble Press"
+    lore: |2-
+
+      &7Compresses cobblestones
+      &7more frequently.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  DECOMPRESSOR:
+    name: "&7Decompressor"
+    lore: |2-
+
+      &7Decompresses materials.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  QUARRY:
+    name: "&9Basic Quarry"
+    lore: |2-
+
+      &7Automatically mines resources.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+    lore-overrides:
+      4: "%sftrlore_Speed_1%"
+  QUARRY_2:
+    lore: |2-
+
+      &7Automatically mines resources.
+
+      &8⇨ &e⚡ &7Speed: &b2x
+  QUARRY_3:
+    name: "&8Void &9Quarry"
+    lore: |2-
+
+      &7Automatically mines resources.
+
+      &8⇨ &e⚡ &7Speed: &b4x
+  QUARRY_4:
+    name: "&bInfinity &9Quarry"
+    lore: |2-
+
+      &7Automatically mines resources.
+
+      &8⇨ &e⚡ &7Speed: &b64x
+  GEO_QUARRY:
+    name: "&2Geo Quarry"
+    lore: |2-
+
+      &7Automatically mines GEO resources.
+
+      &8⇨ &e⚡ &7Speed: &b1x
+  GEO_QUARRY_2:
+    name: "&bInfinity &2Geo Quarry"
+    lore: |2-
+
+      &7Automatically mines GEO resources.
+
+      &8⇨ &e⚡ &7Speed: &b4x
+  GEAR_TRANSFORMER:
+    name: "&9Gear Transformer"
+    lore: |2
+
+      &7Changes the material of tools and gear.
+  SMITHING_TEMPLATE_RANDOMIZER:
+    name: "&8Smithing Template Randomizer"
+    lore: |2
+
+      &7Randomly get a smithing template
+      &7from an &bUnknown Smithing Template.
+  ADVANCED_ANVIL:
+    name: "&cAdvanced Anvil"
+    lore: |2-
+
+      &7Combines the enchantments like the anvil.
+      &7Bypasses the vanilla enchantment limits.
+
+      &7Works with Slimefun items.
+  INFINITY_WORKBENCH:
+    name: "&6Infinity Workbench"
+    lore: |2-
+
+      &7Used to craft infinity items.
+  HYDRO_GENERATOR:
+    name: "&9Hydro Generator"
+    lore: |2-
+
+      &7Generates energy from the movement of water.
+
+      &fMust be waterlogged to work.
+  HYDRO_GENERATOR_2:
+    name: "&cAdvanced &9Hydro Generator"
+    lore: |2-
+
+      &7Generates energy from the movement of water.
+
+      &fMust be waterlogged to work.
+  GEOTHERMAL_GENERATOR:
+    name: "&cGeothermal Generator"
+    lore: |2-
+
+      &7Generates energy from the heat of the world.
+
+      &fEnergy production is doubled while in the nether.
+  GEOTHERMAL_GENERATOR_2:
+    name: "&cAdvanced &6Geothermal Generator"
+    lore: |2-
+
+      &7Generates energy from the heat of the world.
+
+      &fEnergy production is doubled while in the nether.
+  SOLAR_PANEL:
+    name: "&6Solar Panel"
+    lore: |2
+
+      &7Generates energy from the sun.
+  SOLAR_PANEL_2:
+    name: "&cAdvanced &6Solar Panel"
+    lore: |2
+
+      &7Generates energy from the sun.
+  SOLAR_PANEL_3:
+    name: "&eCelestial &6Solar Panel"
+    lore: |2
+
+      &7Generates energy from the sun.
+  VOID_PANEL:
+    name: "&8Void Panel"
+    lore: |2
+
+      &7Generates energy from the darkness.
+  INFINITY_PANEL:
+    name: "&bInfinity Panel"
+    lore: |2
+
+      &7Generates energy from the cosmos.
+  INFINITY_REACTOR:
+    name: "&bInfinity Reactor"
+    lore: |2
+
+      &7Generates energy through the compression
+      &7of &8Void &7and &bInfinity &7Ingots.
+  INFINITY_SINGULARITY_REACTOR:
+    name: "&bInfinity Singularity Reactor"
+    lore: |2
+
+      &7Generates energy through the compression
+      &7of &bInfinity Singularities&7.
+  MOB_SIMULATION_CHAMBER:
+    name: "&8Mob Simulation Chamber"
+    lore: |2
+
+      &7Simulates mobs using mob data card.
+
+      &7Generates mob drops and experience.
+  MOB_DATA_INFUSER:
+    name: "&bMob Data Infuser"
+    lore: |2
+
+      &7Infuses empty mob data card
+      &7with mob items.
+  MOB_DATA_CARD_EMPTY:
+    name: "&8Mob Data Card (Empty)"
+  MOB_DATA_CARD:
+    name: "&8Mob Data Card"
+  STORAGE_FORGE:
+    name: "&6Storage Forge"
+    lore: |-
+      &7Craft and upgrade Storage Units.
+      &7Items are kept when upgrading.
+  STORAGE_UNIT_1:
+    name: "&eStorage Unit &7(1)"
+  STORAGE_UNIT_2:
+    name: "&eStorage Unit &7(2)"
+  STORAGE_UNIT_3:
+    name: "&eStorage Unit &7(3)"
+  STORAGE_UNIT_4:
+    name: "&eStorage Unit &7(4)"
+  STORAGE_UNIT_5:
+    name: "&eStorage Unit &7(5)"
+  STORAGE_UNIT_6:
+    name: "&eStorage Unit &7(6)"
+  STORAGE_UNIT_7:
+    name: "&eStorage Unit &7(7)"
+  STORAGE_UNIT_8:
+    name: "&eStorage Unit &7(8)"
+  STORAGE_UNIT_9:
+    name: "&eStorage Unit &7(9)"
+  STORAGE_UNIT_10:
+    name: "&eStorage Unit &7(10)"
+  OSCILLATOR:
+    name: "&6Oscillator"
+lores:
+  guide:
+    back:
+      previous: "&fClick&7: Go back to previous page"
+      main: "&fShift + Click&7: Go back to main page"
+  collect: "&7Collects:"
+  produce: "&7Produces:"
+  info: "&7Information:"
+  soulbound: "&bSoulbound"
+  vein-miner: "&bVein Miner"
+  storage:
+    item: "&aStored item: &7{0}"
+    amount: "&bAmount: &7{0}"
+    void-excess: "&eVoid Excess: &7{0}"
+researches:
+  harvesting_void: "Harvesting the Void"
+  infinity_gear: "Infinity Gear"
+  singularities: "Creating Singularities"
+messages:
+  commands:
+    no-permission: "&cYou do not have permission to use this command."
+    player-only: "&cThis command can only be used by players."
+    player-not-found: "&cTarget player is not found."
+    invalid-item: "&cInvalid item."
+    giverecipe:
+      description: "Get the recipe ingredients."
+      to-sender: "&7You have provided the ingredients of &a{0} &7to &b{1}&7."
+      to-target: "&7You have received the ingredients of &a{0}&7."
+    guide:
+      description: "Open the guide for the specified or your hand held Slimefun item."
+    printitem:
+      description: "Print the item in hand."
+      no-item: "&cYou must hold an item in your hand."
+    id:
+      description: "Get the Slimefun ID of the item in hand."
+      message: "&7The Slimefun item of the item in your hand is &f{0}&7, the id is: (Click on the ID below to copy)"
+  vein-miner:
+    applied: "&aVein Miner has been applied to the item."
+    no-hunger: "&cYou do not have enough hunger level to do this."
+  no-room: "&cNot enough room"
+  crafting:
+    invalid-input: "&cInvalid input."
+    success: "&aSuccessfully crafted &b{0}&a."
+  advanced-anvil:
+    input1-not-enchantable: "&cThe first input is a Slimefun item that is not enchantable."
+    input2-not-disenchantable: "&cThe second input is a Slimefun item that is not disenchantable."
+    no-output: "&cNo upgrades available."
+  generators:
+    type: "&eType: &f{0}"
+    working: "&eWorking: &f{0}"
+    tick-rate: "&eTick rate: &f{0} &7tick(s)"
+    production: "&eEnergy production: &f{0} &7J/t (&f{1} &7J/s)"
+    expected-production: "&eExpected energy production: &f{0} &7J/t (&f{1} &7J/s)"
+  infinity-matrix:
+    not-owner: "&cYou are not the owner of this matrix."
+    ownership-removed: "&bYou are no longer the owner of this matrix."
+    flight-enabled: "&aFlight is enabled!"
+    flight-disabled: "&cFlight is disabled!"
+  storage:
+    interaction-cd: "&cYou must wait before you can interact with this again."

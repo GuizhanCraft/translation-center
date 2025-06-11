@@ -15,3 +15,27 @@ repos:
       - source: "src/main/resources/lang/en-US.yml"
         name: "en-US.yml"
         target: "src/main/resources/lang/{lang}.yml"
+  - owner: GuizhanCraft
+    repo: UltimateGenerators2
+    branch: master
+    folder: UltimateGenerators2
+    files:
+      - source: "src/main/resources/lang/en.yml"
+        name: "en-US.yml"
+        target: "src/main/resources/lang/{lang}.yml"
+  - owner: GuizhanCraft
+    repo: GeneticChickengineering-Reborn
+    branch: master
+    folder: GeneticChickengineering-Reborn
+    files:
+      - source: "src/main/resources/lang/en-US.yml"
+        name: "en-US.yml"
+        target: "src/main/resources/lang/{lang}.yml"
+  - owner: GuizhanCraft
+    repo: InfinityExpansion2
+    branch: master
+    folder: InfinityExpansion2
+    files:
+      - source: "src/main/resources/lang/en.yml"
+        name: "en-US.yml"
+        target: "src/main/resources/lang/{lang}.yml"

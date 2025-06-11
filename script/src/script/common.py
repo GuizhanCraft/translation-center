@@ -11,16 +11,20 @@ import subprocess
 LANGUAGE_CODE_MAPPING = {
     "zh-Hans": "zh-CN",
     "zh-Hant": "zh-TW",
+    "pt_BR": "pt",
+    "pt-BR": "pt",
+    "vi-VN": "vi",
+    "ja-JP": "ja",
 }
 
 
 def get_mapped_language_code(language_code: str) -> str:
     """
     Get the mapped language code based on the predefined mapping.
-    
+
     Args:
         language_code: The original language code
-        
+
     Returns:
         str: The mapped language code, or the original code if no mapping exists
     """
@@ -34,6 +38,7 @@ def git_commit_changes(message: str) -> None:
     Args:
         message: Commit message
     """
+
     try:
         # Add all changes
         subprocess.run(["git", "add", "."], check=True, cwd=get_project_root_dir())
