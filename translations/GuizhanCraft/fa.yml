@@ -1,0 +1,28 @@
+items:
+  # item groups
+  GROUP_MAIN:
+    conditions:
+      force-load: true
+  GROUP_MATERIALS:
+    conditions:
+      force-load: true
+  GROUP_MAGIC:
+    conditions:
+      force-load: true
+  GROUP_GENERATORS:
+    conditions:
+      force-load: true
+  GROUP_MACHINES:
+    conditions:
+      force-load: true
+  # recipes
+  RECIPE_FE_UNKNOWN:
+    conditions:
+      force-load: true
+  # gui items
+  UI_CRAFT:
+    conditions:
+      force-load: true
+  UI_ELECTRIC_SPAWNER_ASSEMBLER_INFO:
+    conditions:
+      force-load: true
