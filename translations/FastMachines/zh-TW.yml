@@ -1,42 +1,13 @@
 items:
-  # categories
   FAST_MACHINES:
-    conditions:
-      force-load: true
+    name: "&e快捷機器"
   MATERIALS:
-    conditions:
-      force-load: true
+    name: "&e快捷機器 &7- &b材料"
   MACHINES:
-    conditions:
-      force-load: true
-  # gui items
-  CHOICE_INDICATOR:
-    conditions:
-      force-load: true
-  SCROLL_UP:
-    conditions:
-      force-load: true
-  SCROLL_DOWN:
-    conditions:
-      force-load: true
-  INFO:
-    conditions:
-      force-load: true
-  CRAFT:
-    conditions:
-      force-load: true
-  NO_ITEM:
-    conditions:
-      force-load: true
+    name: "&e快捷機器 &7- &b機器"
   FAST_INFINITY_WORKBENCH:
-    lore:
-    - "&7更有用的無盡工作台。"
-    - ""
+    name: "&a快捷無盡工作台"
   FAST_SLIMEFRAME_FOUNDRY:
-    lore:
-    - "&7更加有用的粘液戰甲鑄造廠。"
-    - ""
+    name: "&a快捷粘液戰甲鑄造廠"
   FAST_INFINITY_WORKBENCH_2:
-    lore:
-    - "&7更有用的無盡工作台。"
-    - ""
+    name: "&a快捷無盡工作台"
