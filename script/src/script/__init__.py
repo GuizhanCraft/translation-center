@@ -3,7 +3,8 @@ Translation center automation script.
 This script manages translation files across multiple GitHub repositories.
 """
 
-from .config import load_repos_config, validate_config, Config
+from .config import load_repos_config, validate_config
+from .pull import pull_all_repos
 
 
 def main() -> None:
@@ -20,7 +21,6 @@ def main() -> None:
 
         # Part 2: Pull the latest source files.
         print("\nPulling translation files...")
-        from .pull import pull_all_repos
 
         pull_all_repos(config)
         print("Pull operation completed.")
