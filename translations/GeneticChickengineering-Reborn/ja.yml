@@ -1,0 +1,47 @@
+console:
+  paper-only: "このプラグインを実行するにはPaperが必要です。Spigotの代わりにPaper、もしくはそのフォークを使用してください。"
+  load:
+    items: "アイテムを読み込み中…"
+    researches: "リサーチを読み込み中…"
+    commands-fail: "コマンドを初期化できません！開発者に報告してください！"
+    database: "データベースを読み込み中…"
+    chickens: "鶏を{0}羽登録しました。"
+    integrations: "インテグレーションを読み込み中..."
+    integration: "{0}を発見しました。インテグレーション初期化中…"
+  database:
+    connect-fail: "データベースに接続できません！"
+    connected: "データベースに接続しました！"
+    not-connected: "データベースに接続されていません！現在のオペレーションを中止します。"
+    exception: "SQL文の実行中にエラーが発生しました！"
+    cleanup: "{0}つの古い鶏レコードを削除しました。すでに死んだんですか。"
+categories:
+  ICON:
+    name: "&eGenetic Chickengineering"
+  DIRECTORY_ICON:
+    name: "&eGCE産品"
+recipes:
+  from_net:
+    name: "&a補鶏網"
+  from_chicken:
+    name: "&e鼓舞室"
+items:
+  POCKET_CHICKEN:
+    name: "&bポケット鶏"
+  CHICKEN_NET:
+    name: "&a補鶏網"
+  WATER_EGG:
+    name: "&9水の卵"
+  LAVA_EGG:
+    name: "&c溶岩の卵"
+  GENETIC_SEQUENCER:
+    name: "&e遺伝子シーケンサー"
+  EXCITATION_CHAMBER:
+    name: "&e鼓舞室"
+  EXCITATION_CHAMBER_2:
+    name: "&e迅速な鼓舞室"
+  EXCITATION_CHAMBER_3:
+    name: "&e究極の鼓舞室"
+  PRIVATE_COOP:
+    name: "&e鶏小屋"
+  RESTORATION_CHAMBER:
+    name: "&e休息室"
