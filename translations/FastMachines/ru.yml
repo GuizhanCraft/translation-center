@@ -1,3 +1,7 @@
+console:
+  loaded-language: "Загруженный язык: {0}"
+  loading-items: "Загрузка предметов..."
+  loading-researches: "Загрузка исследований..."
 items:
   FAST_MACHINES:
     name: "&eБыстрые Автоматы"
@@ -5,3 +9,11 @@ items:
     name: "&eБыстрые Автоматы &7- &Материалы"
   MACHINES:
     name: "&eБыстрые Автоматы &7- &aАвтоматы"
+  CHOICE_INDICATOR:
+    name: "&eВыбранный предмет"
+  SCROLL_UP:
+    name: "&eПролистать вверх"
+  SCROLL_DOWN:
+    name: "&eПролистать вниз"
+  INFO:
+    name: "&fИнформация"
