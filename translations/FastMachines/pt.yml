@@ -1,0 +1,4 @@
+console:
+  loaded-language: "Idioma carregado: {0}"
+  loading-items: "Carregando itens..."
+  loading-researches: "Carregando pesquisas..."
