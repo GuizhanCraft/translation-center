@@ -148,6 +148,8 @@ items:
     lore: |-
       &7Xưởng đúc SlimeFrame hữu ích hơn.
       &7Chế tạo mà không cần sắp xếp vật phẩm theo thứ tự.
+  FAST_INFINITY_WORKBENCH_2:
+    name: "&aBàn làm việc vô cực Nhanh"
 lores:
   per-craft: " &7mỗi lần chế tạo"
 messages:
