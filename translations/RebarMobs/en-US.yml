@@ -1,0 +1,201 @@
+addon: "Rebar Mobs"
+item:
+  soul_shard:
+    name: "<reset>Soul Shard"
+    lore: |-
+      <arrow> A fractured crystal, pulsing with captured essence.
+
+      <guidearrow> <insn>Sneak + Right click</insn> while holding in
+      <guidearrow> main hand to reset type and soul amount.
+
+      <arrow> <attr>Mob Type:</attr> %mob-type%
+      <arrow> <attr>Tier:</attr> %tier%
+      <arrow> <attr>Souls:</attr> %souls%
+    no-mob-type: "<red>Not Bound"
+  corrupted_essence:
+    name: "<reset>Corrupted Essence"
+  vile_dust:
+    name: "<reset>Vile Dust"
+  corrupted_ingot:
+    name: "<reset>Corrupted Ingot"
+  vile_sword_frame:
+    name: "<reset>Vile Sword Frame"
+  soul_altar:
+    name: "<reset>Soul Altar"
+    lore: |-
+      <star> Multiblock
+      <arrow> An ancient altar that whispers of transformation.
+      <arrow> <insn>Right click</insn> with ingredient item in hand.
+      <arrow> <red>The whole multiblock will be destroyed.</red>
+
+      <u>Components</u>
+      <diamond> 1x <yellow><item:rebarmobs:soul_altar/></yellow>
+      <diamond> 4x <yellow><item:quartz_block/></yellow>
+      <diamond> 4x <yellow><item:obsidian/></yellow>
+  soul_cage:
+    name: "<reset>Soul Cage"
+    lore: |-
+      <arrow> A cage forged from corrupted metal, hungry for souls.
+      <arrow> It bends the boundary between life and death.
+
+      <guidearrow> <insn>Right click</insn> with <item:rebarmobs:soul_shard> to activate.
+      <guidearrow> <insn>Sneak + Right click</insn> to get <item:rebarmobs:soul_shard> back and deactivate.
+    waila:
+      empty: "Soul Cage | <red>Empty"
+      filled: "Soul Cage | %mob-type% | Tier %tier%"
+  cursed_fire:
+    name: "<reset>Cursed Fire"
+  quartz_and_steel:
+    name: "<reset>Quartz and Steel"
+  vile_sword:
+    name: "<reset>Vile Sword"
+    lore: |-
+      <arrow> Gain 1 extra soul when killing
+      <arrow> with this sword in main hand.
+  mob_head_info:
+    name: "<reset>Killing an entity"
+    lore: |-
+      <arrow> Killing an specified entity has chance to drop its head.
+      <arrow> Decapitator enchantment can increase chance.
+
+      <arrow> <attr>Base chance:</attr> %base-chance%
+      <arrow> <attr>Decapitator chance:</attr> %decapitator-chance% per level
+  mob_head_bat:
+    name: "<reset>Bat Head"
+  mob_head_blaze:
+    name: "<reset>Blaze Head"
+  mob_head_cave_spider:
+    name: "<reset>Cave Spider Head"
+  mob_head_chicken:
+    name: "<reset>Chicken Head"
+  mob_head_cow:
+    name: "<reset>Cow Head"
+  mob_head_dolphin:
+    name: "<reset>Dolphin Head"
+  mob_head_drowned:
+    name: "<reset>Drowned Head"
+  mob_head_elder_guardian:
+    name: "<reset>Elder Guardian Head"
+  mob_head_enderman:
+    name: "<reset>Enderman Head"
+  mob_head_evoker:
+    name: "<reset>Evoker Head"
+  mob_head_ghast:
+    name: "<reset>Ghast Head"
+  mob_head_guardian:
+    name: "<reset>Guardian Head"
+  mob_head_horse:
+    name: "<reset>Horse Head"
+  mob_head_husk:
+    name: "<reset>Husk Head"
+  mob_head_illusioner:
+    name: "<reset>Illusioner Head"
+  mob_head_iron_golem:
+    name: "<reset>Iron Golem Head"
+  mob_head_llama:
+    name: "<reset>Llama Head"
+  mob_head_magma_cube:
+    name: "<reset>Magma Cube Head"
+  mob_head_mooshroom:
+    name: "<reset>Mooshroom Head"
+  mob_head_ocelot:
+    name: "<reset>Ocelot Head"
+  mob_head_parrot:
+    name: "<reset>Parrot Head"
+  mob_head_pig:
+    name: "<reset>Pig Head"
+  mob_head_polar_bear:
+    name: "<reset>Polar Bear Head"
+  mob_head_rabbit:
+    name: "<reset>Rabbit Head"
+  mob_head_sheep:
+    name: "<reset>Sheep Head"
+  mob_head_shulker:
+    name: "<reset>Shulker Head"
+  mob_head_slime:
+    name: "<reset>Slime Head"
+  mob_head_spider:
+    name: "<reset>Spider Head"
+  mob_head_squid:
+    name: "<reset>Squid Head"
+  mob_head_stray:
+    name: "<reset>Stray Head"
+  mob_head_turtle:
+    name: "<reset>Turtle Head"
+  mob_head_vex:
+    name: "<reset>Vex Head"
+  mob_head_villager:
+    name: "<reset>Villager Head"
+  mob_head_vindicator:
+    name: "<reset>Vindicator Head"
+  mob_head_witch:
+    name: "<reset>Witch Head"
+  mob_head_wither:
+    name: "<reset>Wither Head"
+  mob_head_zombie_villager:
+    name: "<reset>Zombie Villager Head"
+  mob_head_ravager:
+    name: "<reset>Ravager Head"
+  mob_head_pillager:
+    name: "<reset>Pillager Head"
+  mob_head_fox:
+    name: "<reset>Fox Head"
+  mob_head_panda:
+    name: "<reset>Panda Head"
+  mob_head_wandering_trader:
+    name: "<reset>Wandering Trader Head"
+  mob_head_zombified_piglin:
+    name: "<reset>Zombified Piglin Head"
+  mob_head_strider:
+    name: "<reset>Strider Head"
+  mob_head_axolotl:
+    name: "<reset>Axolotl Head"
+  mob_head_glow_squid:
+    name: "<reset>Glow Squid Head"
+  mob_head_goat:
+    name: "<reset>Goat Head"
+  mob_head_allay:
+    name: "<reset>Allay Head"
+  mob_head_frog:
+    name: "<reset>Frog Head"
+  mob_head_tadpole:
+    name: "<reset>Tadpole Head"
+  mob_head_camel:
+    name: "<reset>Camel Head"
+  mob_head_sniffer:
+    name: "<reset>Sniffer Head"
+  mob_head_armadillo:
+    name: "<reset>Armadillo Head"
+  mob_head_bogged:
+    name: "<reset>Bogged Head"
+  mob_head_breeze:
+    name: "<reset>Breeze Head"
+  mob_head_creaking:
+    name: "<reset>Creaking Head"
+  mob_head_happy_ghast:
+    name: "<reset>Happy Ghast Head"
+  mob_head_copper_golem:
+    name: "<reset>Copper Golem Head"
+  mob_head_nautilus:
+    name: "<reset>Nautilus Head"
+  mob_head_zombie_nautilus:
+    name: "<reset>Zombie Nautilus Head"
+  mob_head_camel_husk:
+    name: "<reset>Camel Husk Head"
+  mob_head_parched:
+    name: "<reset>Parched Head"
+enchantment:
+  soul_stealer: "Soul Stealer"
+  decapitator: "Decapitator"
+guide:
+  page:
+    rebar_mobs: "<reset>Rebar Mobs"
+    resources_magic: "<reset>Magic Resources"
+    blocks: "<reset>Blocks"
+command:
+  description: "RebarMobs main command"
+  enchantment_book:
+    description: "Grab an enchantment book with the given enchantment and level (default to 1)"
+    invalid-enchantment: "<red>Invalid enchantment."
+    invalid-level: "<red>Invalid enchantment level."
+    success: "<green>Successfully obtained an enchantment book with %enchantment%, level %level%"
