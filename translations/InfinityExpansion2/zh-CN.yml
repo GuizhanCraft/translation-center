@@ -170,11 +170,6 @@ items:
     name: "&a运行中..."
     lore-overrides:
       1: "&e无尽奇点剩余时间（粘液刻）："
-  _UI_STORAGE_ACTIONS_INV:
-    name: "&a物品栏操作"
-    lore: |-
-      &e左键点击&7以从物品栏中存入
-      &e右键点击&7以取出到背包
   _UI_STORAGE_NO_ITEM:
     name: "&c没有物品"
   _UI_STORAGE_CAPACITY:
