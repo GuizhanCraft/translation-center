@@ -39,3 +39,11 @@ repos:
       - source: "src/main/resources/lang/en.yml"
         name: "en-US.yml"
         target: "src/main/resources/lang/{lang}.yml"
+  - owner: GuizhanCraft
+    repo: RebarMobs
+    branch: master
+    folder: RebarMobs
+    files:
+      - source: "src/main/resources/lang/en.yml"
+        name: "en-US.yml"
+        target: "src/main/resources/lang/{lang}.yml"
