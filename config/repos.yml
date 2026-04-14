@@ -3,6 +3,9 @@ repos:
     repo: FastMachines
     branch: master
     folder: FastMachines
+    language_mapping:
+      zh-Hans: zh-CN
+      zh-Hant: zh-TW
     files:
       - source: "src/main/resources/lang/en-US.yml"
         name: "en-US.yml"
@@ -19,6 +22,10 @@ repos:
     repo: UltimateGenerators2
     branch: master
     folder: UltimateGenerators2
+    language_mapping:
+      zh-Hans: zh-CN
+      zh-Hant: zh-TW
+      pt_BR: pt
     files:
       - source: "src/main/resources/lang/en.yml"
         name: "en-US.yml"
@@ -27,6 +34,10 @@ repos:
     repo: GeneticChickengineering-Reborn
     branch: master
     folder: GeneticChickengineering-Reborn
+    language_mapping:
+      ja-JP: ja
+      pt-BR: pt
+      vi-VN: vi
     files:
       - source: "src/main/resources/lang/en-US.yml"
         name: "en-US.yml"
@@ -43,6 +54,8 @@ repos:
     repo: RebarMobs
     branch: master
     folder: RebarMobs
+    language_mapping:
+      zh_CN: zh-CN
     files:
       - source: "src/main/resources/lang/en.yml"
         name: "en-US.yml"

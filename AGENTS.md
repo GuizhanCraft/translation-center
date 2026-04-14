@@ -29,7 +29,7 @@ A unified repository that manages translations for Minecraft plugins via Crowdin
 
 **Data Sanitization**: `process_yaml_data()` recursively extracts only string values, converts string lists to `LiteralScalarString` multiline format, and removes non-string types (numbers, booleans, floats).
 
-**Language Code Standardization**: Non-standard language codes are mapped to standardized forms (e.g., `zh-Hans` → `zh-CN`, `pt_BR` → `pt`, `vi-VN` → `vi`) via `LANGUAGE_CODE_MAPPING` dictionary.
+**Language Code Standardization**: Non-standard language codes are mapped to standardized forms (e.g., `zh-Hans` → `zh-CN`, `pt_BR` → `pt`, `vi-VN` → `vi`) via per-repository `language_mapping` in `repos.yml`. Each repository can define its own mapping from plugin-specific codes to Crowdin standardized codes.
 
 **Error Handling**: Operations print warnings on individual file failures but continue processing remaining repositories/files. Repository-level errors are caught and logged without stopping the entire sync.
 

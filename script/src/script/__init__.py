@@ -7,6 +7,7 @@ import sys
 from .config import load_repos_config, validate_config
 from .pull_sources import pull_sources
 from .pull_translations import pull_translations
+from .push_translations import push_translations
 
 
 def main() -> None:
@@ -24,6 +25,8 @@ def main() -> None:
             pull_sources(config)
         elif command == "pull_translations":
             pull_translations(config)
+        elif command == "push_translations":
+            push_translations(config)
         elif command == "list":
             print("Configuration is valid!")
             print(f"Loaded {len(config['repos'])} repositories.")
@@ -33,7 +36,11 @@ def main() -> None:
                 )
         else:
             print(f"Unknown command: {command}")
-            print("Available commands: pull_sources, pull_translations, list")
+            print(
+                "Available commands: pull_sources, pull_translations, push_translations, list"
+            )
     else:
         print("Unknown command: ")
-        print("Available commands: pull_sources, pull_translations, list")
+        print(
+            "Available commands: pull_sources, pull_translations, push_translations, list"
+        )

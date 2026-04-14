@@ -18,17 +18,12 @@ LANGUAGE_CODE_MAPPING = {
 }
 
 
-def get_mapped_language_code(language_code: str) -> str:
-    """
-    Get the mapped language code based on the predefined mapping.
-
-    Args:
-        language_code: The original language code
-
-    Returns:
-        str: The mapped language code, or the original code if no mapping exists
-    """
-    return LANGUAGE_CODE_MAPPING.get(language_code, language_code)
+def get_mapped_language_code(
+    language_code: str, mapping: dict[str, str] | None = None
+) -> str:
+    if mapping is not None:
+        return mapping.get(language_code, language_code)
+    return language_code
 
 
 def git_commit_changes(message: str) -> None:

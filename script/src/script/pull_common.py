@@ -117,7 +117,6 @@ def process_yaml_content(content: str) -> Dict[str, Any]:
         yaml_loader = YAML()
         yaml_loader.preserve_quotes = True
         yaml_loader.width = 4096
-        yaml_loader.sort_keys = False
 
         data = yaml_loader.load(StringIO(filtered_content))
         processed_data = process_yaml_data(data)
@@ -149,7 +148,7 @@ def process_yaml_data(data: Any) -> Any:
         # Skip empty lists - don't import empty list fields
         if not data:
             return None
-        
+
         # Convert list to multiline string if all elements are strings
         if all(isinstance(item, str) for item in data):
             # Always use multiline format for string lists, even with single item
@@ -194,7 +193,6 @@ def create_yaml(preserve_quotes: bool = False) -> YAML:
     yaml_processor.default_flow_style = False
     yaml_processor.allow_unicode = True
     yaml_processor.width = 4096
-    yaml_processor.sort_keys = False  # Preserve original order
     yaml_processor.encoding = "utf-8"
 
     if not preserve_quotes:

@@ -176,9 +176,9 @@ def pull_repo(repo_config: RepoConfig, translations_dir: Path) -> List[str]:
         for lang_file in language_files:
             # Extract language code from filename
             lang_code = Path(lang_file).stem
-            
-            # Get mapped language code for standardization
-            mapped_lang_code = get_mapped_language_code(lang_code)
+
+            repo_mapping = repo_config.get("language_mapping")
+            mapped_lang_code = get_mapped_language_code(lang_code, repo_mapping)
             mapped_file_name = f"{mapped_lang_code}.yml"
 
             # Build source file path

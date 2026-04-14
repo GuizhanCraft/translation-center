@@ -1,0 +1,37 @@
+name: Push Translations
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'translations/**'
+      - '!translations/**/en-US.yml'
+      - '!translations/**/en.yml'
+
+jobs:
+  push-translations:
+    name: Push translations
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup UV
+        uses: astral-sh/setup-uv@v6
+        with:
+            version: "latest"
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "GuizhanBot"
+          git config --global user.email "${{ secrets.BOT_EMAIL }}"
+
+      - name: Push translations
+        working-directory: script
+        run: uv run script push_translations
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}

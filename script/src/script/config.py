@@ -4,7 +4,7 @@ This module handles loading and validating configuration from config files.
 """
 
 from pathlib import Path
-from typing import List, TypedDict
+from typing import TypedDict, cast
 from ruamel.yaml import YAML
 from .common import get_project_root_dir
 
@@ -24,13 +24,14 @@ class RepoConfig(TypedDict):
     repo: str
     branch: str
     folder: str
-    files: List[FileConfig]
+    files: list[FileConfig]
+    language_mapping: dict[str, str] | None
 
 
 class Config(TypedDict):
     """Root configuration structure."""
 
-    repos: List[RepoConfig]
+    repos: list[RepoConfig]
 
 
 def get_config_path() -> Path:
@@ -70,7 +71,7 @@ def load_repos_config() -> Config:
     if not isinstance(data, dict) or "repos" not in data:
         raise ValueError("Invalid configuration format: 'repos' key not found")
 
-    return data
+    return cast(Config, cast(object, data))
 
 
 def validate_config(config: Config) -> None:
@@ -96,6 +97,12 @@ def validate_config(config: Config) -> None:
 
         if not isinstance(repo["files"], list):
             raise ValueError(f"'files' in repository {repo['repo']} must be a list")
+
+        if "language_mapping" in repo and repo["language_mapping"] is not None:
+            if not isinstance(repo["language_mapping"], dict):
+                raise ValueError(
+                    f"'language_mapping' in repository {repo['repo']} must be a dict"
+                )
 
         for file in repo["files"]:
             file_required_keys = ["source", "name", "target"]
