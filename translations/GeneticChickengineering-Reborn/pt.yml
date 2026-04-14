@@ -15,11 +15,6 @@ console:
     not-connected: "Banco de dados não conectado! Cancelando a operação atual."
     exception: "Ocorreu um SQLException ao executar entradas SQL!"
     cleanup: "Removido {0} registros de galinhas do banco de dados. Eles morreram?"
-categories:
-  ICON:
-    name: "&eGenetic Chickengineering"
-  DIRECTORY_ICON:
-    name: "&eGCE Chicken Directory"
 recipes:
   from_net:
     name: "&aRede de Galinha"
@@ -83,11 +78,9 @@ lores:
     on-fire: "&7Sobre o Fogo: &e✓"
     baby: "&7Bebê: &e✓"
     status:
-      line: "&7Status: &e{0}"
       healthy: "&aSaudável"
       exhausted: "&4Exausto"
       fatigued: "&eFatigado"
-    dna: "&7DNA: &e{0}"
     type: "&7Tipo: &e{0} &eGalinha"
 products:
   FEATHER: "Pena"
@@ -113,7 +106,6 @@ products:
   KELP: "Alga"
   SLIME_BALL: "Bola de slime"
   GOLD: "Ouro"
-  NETHERRACK: "Netherrack"
   GLASS: "Vidro"
   LAPIS: "Lápis-lazúli"
   IRON: "Ferro"
@@ -125,10 +117,8 @@ products:
   OBSIDIAN: "Obsidiana"
   COPPER_DUST: "Pó de Cobre"
   MAGNESIUM_DUST: "Pó de Magnésio"
-  LAVA: "Lava"
   TIN_DUST: "Pó de Estanho"
   SNOWBALL: "Bola de Neve"
-  REDSTONE: "Redstone"
   CACTUS: "Cacto"
   ALUMINUM_DUST: "Pó de Alumínio"
   LEAD_DUST: "Pó de Chumbo"
