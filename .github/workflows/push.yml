@@ -30,6 +30,37 @@ jobs:
           git config --global user.name "GuizhanBot"
           git config --global user.email "${{ secrets.BOT_EMAIL }}"
 
+      - name: Test BOT_TOKEN permissions
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: |
+          set -e
+          OWNER="GuizhanCraft"
+          REPO="FastMachines"
+          BRANCH="bot-token-test-${{ github.run_id }}"
+
+          echo "Testing token validity..."
+          USER=$(curl -s -H "Authorization: Bearer $BOT_TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                https://api.github.com/user | jq -r '.login')
+          echo "Token belongs to: $USER"
+
+          echo "Testing write access to $OWNER/$REPO..."
+          SHA=$(curl -s -H "Authorization: Bearer $BOT_TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/$OWNER/$REPO/git/refs/heads/master" | jq -r '.object.sha')
+
+          curl -s -X POST -H "Authorization: Bearer $BOT_TOKEN" \
+               -H "Accept: application/vnd.github+json" \
+               -d "{\"ref\":\"refs/heads/$BRANCH\",\"sha\":\"$SHA\"}" \
+               "https://api.github.com/repos/$OWNER/$REPO/git/refs" | jq -r '.ref // .message'
+
+          curl -s -X DELETE -H "Authorization: Bearer $BOT_TOKEN" \
+               -H "Accept: application/vnd.github+json" \
+               "https://api.github.com/repos/$OWNER/$REPO/git/refs/heads/$BRANCH" | jq -r '.message // "Branch deleted successfully"'
+
+          echo "Permission test passed!"
+
       - name: Push translations
         working-directory: script
         run: uv run script push_translations
