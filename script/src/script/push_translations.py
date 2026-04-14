@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 """
 Push translation files from local translations/ directory to configured GitHub repositories.
-Uses GitHub Contents API to create or update files in target plugin repos.
+Clones each target repository, applies all translation changes in a single commit, and pushes.
+Skips archived repositories and empty translation files.
 """
 
-import base64
-import binascii
 import json
 import os
+import shutil
 import ssl
+import subprocess
+import tempfile
 from pathlib import Path
 from typing import Any
-from urllib.error import HTTPError, URLError
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-from .config import Config, RepoConfig, FileConfig
+from .config import Config, FileConfig, RepoConfig
 from .pull_common import get_translations_dir
 
 
@@ -27,30 +29,7 @@ def get_remote_language_code(
     return language_code
 
 
-def get_github_api_url(owner: str, repo: str, path: str, branch: str = "master") -> str:
-    """
-    Generate GitHub Contents API URL for a file.
-
-    Args:
-        owner: Repository owner
-        repo: Repository name
-        path: File path in the repository
-        branch: Branch name
-
-    Returns:
-        str: The GitHub API URL
-    """
-    return f"https://api.github.com/repos/{owner}/{repo}/contents/{path}?ref={branch}"
-
-
 def create_ssl_context() -> ssl.SSLContext:
-    """
-    Create an SSL context that doesn't verify certificates.
-    Matches the pattern used in pull_common.py.
-
-    Returns:
-        ssl.SSLContext: Configured SSL context
-    """
     ssl_context = ssl.create_default_context()
     ssl_context.check_hostname = False
     ssl_context.verify_mode = ssl.CERT_NONE
@@ -63,21 +42,6 @@ def request_github_json(
     method: str = "GET",
     payload: dict[str, Any] | None = None,
 ) -> tuple[int, Any]:
-    """
-    Make a GitHub API request and return response.
-
-    Args:
-        url: The API URL
-        token: GitHub authentication token
-        method: HTTP method (GET or PUT)
-        payload: Optional JSON payload for PUT requests
-
-    Returns:
-        Tuple[int, Any]: HTTP status code and parsed JSON response (or error dict)
-
-    Raises:
-        URLError: If the request fails at network level
-    """
     headers = {
         "Authorization": f"Bearer {token}",
         "Accept": "application/vnd.github+json",
@@ -111,104 +75,40 @@ def request_github_json(
         return status, error_data
 
 
-def get_existing_file_state(
-    owner: str, repo: str, branch: str, file_path: str, token: str
-) -> tuple[str | None, str | None]:
-    """
-    Check if a file exists in the remote repository and get its SHA and content.
-
-    Args:
-        owner: Repository owner
-        repo: Repository name
-        branch: Branch name
-        file_path: Path to the file in the repository
-        token: GitHub authentication token
-
-    Returns:
-        Tuple[Optional[str], Optional[str]]: (sha, decoded_content) if file exists,
-                                             (None, None) if file doesn't exist
-    """
-    url = get_github_api_url(owner, repo, file_path, branch)
-    status, data = request_github_json(url, token, "GET")
-
-    if status == 404:
-        return None, None
-    elif status == 200:
-        sha = data.get("sha")
-        content_b64 = data.get("content", "")
-        try:
-            decoded_content = base64.b64decode(content_b64.replace("\n", "")).decode(
-                "utf-8"
-            )
-        except (binascii.Error, UnicodeDecodeError):
-            decoded_content = None
-        return sha, decoded_content
-    else:
-        error_msg = data.get("message", f"HTTP {status}")
-        raise URLError(f"Failed to check file state: {error_msg}")
+def is_repo_archived(owner: str, repo: str, token: str) -> bool:
+    url = f"https://api.github.com/repos/{owner}/{repo}"
+    status, data = request_github_json(url, token)
+    if status == 200:
+        return bool(data.get("archived", False))
+    error_msg = data.get("message", f"HTTP {status}")
+    print(f"  Warning: Failed to check repository status: {error_msg}")
+    return False
 
 
-def put_file_content(
-    owner: str,
-    repo: str,
-    branch: str,
-    file_path: str,
-    content: str,
-    token: str,
-    commit_message: str,
-    sha: str | None = None,
-) -> bool:
-    """
-    Create or update a file in the remote repository via GitHub Contents API.
+def run_git_command(
+    args: list[str], cwd: Path, env: dict[str, str] | None = None
+) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", *args],
+        cwd=cwd,
+        check=True,
+        capture_output=True,
+        text=True,
+        env=env,
+    )
 
-    Args:
-        owner: Repository owner
-        repo: Repository name
-        branch: Branch name
-        file_path: Path to the file in the repository
-        content: File content as UTF-8 string
-        token: GitHub authentication token
-        commit_message: Commit message
-        sha: SHA of existing file (required for updates, omit for creates)
 
-    Returns:
-        bool: True if successful, False otherwise
-    """
-    url = get_github_api_url(owner, repo, file_path, branch)
-    content_b64 = base64.b64encode(content.encode("utf-8")).decode("ascii")
-
-    payload: dict[str, str] = {
-        "message": commit_message,
-        "content": content_b64,
-        "branch": branch,
-    }
-    if sha:
-        payload["sha"] = sha
-
-    status, data = request_github_json(url, token, "PUT", payload)
-
-    if status in (200, 201):
-        print(f"    Successfully pushed: {file_path}")
-        return True
-    elif status == 409:
-        print(f"    Warning: Conflict pushing {file_path} (file may have changed)")
-        return False
-    else:
-        error_msg = data.get("message", f"HTTP {status}")
-        print(f"    Error pushing {file_path}: {error_msg}")
-        return False
+def clone_repo(owner: str, repo: str, branch: str, token: str, temp_dir: Path) -> Path:
+    clone_url = f"https://x-access-token:{token}@github.com/{owner}/{repo}.git"
+    repo_dir = temp_dir / repo
+    run_git_command(
+        ["clone", "--depth", "1", "--branch", branch, clone_url, str(repo_dir)],
+        cwd=temp_dir,
+    )
+    return repo_dir
 
 
 def get_translation_files(folder: Path) -> list[Path]:
-    """
-    Get all translation YAML files in a folder, excluding source files.
-
-    Args:
-        folder: Path to the translations folder
-
-    Returns:
-        list[Path]: Sorted list of translation file paths
-    """
     if not folder.exists():
         return []
 
@@ -220,37 +120,21 @@ def get_translation_files(folder: Path) -> list[Path]:
     return sorted(files)
 
 
-def push_file(
-    repo_config: RepoConfig,
-    file_config: FileConfig,
-    translations_dir: Path,
-    token: str,
-) -> list[str]:
-    """
-    Push translation files for a single file configuration entry.
-
-    Args:
-        repo_config: Repository configuration
-        file_config: File configuration
-        translations_dir: Base translations directory
-        token: GitHub authentication token
-
-    Returns:
-        list[str]: List of successfully pushed file paths
-    """
-    pushed_files = []
+def collect_changes_for_file_config(
+    repo_config: RepoConfig, file_config: FileConfig, translations_dir: Path
+) -> list[tuple[Path, str]]:
+    changes: list[tuple[Path, str]] = []
     folder = translations_dir / repo_config["folder"]
     translation_files = get_translation_files(folder)
-
-    if not translation_files:
-        print(f"  No translation files found in {folder}")
-        return pushed_files
-
-    print(f"  Found {len(translation_files)} translation files to push")
-
     language_mapping = repo_config.get("language_mapping")
 
     for local_file in translation_files:
+        local_content = local_file.read_text(encoding="utf-8")
+
+        if not local_content.strip():
+            print(f"  Skipping empty file: {local_file.name}")
+            continue
+
         local_lang_code = local_file.stem
         remote_lang_code = get_remote_language_code(local_lang_code, language_mapping)
 
@@ -262,84 +146,83 @@ def push_file(
             )
             continue
 
-        print(f"  Processing: {local_file.name} -> {remote_path}")
+        changes.append((local_file, remote_path))
 
-        try:
-            local_content = local_file.read_text(encoding="utf-8")
-            sha, remote_content = get_existing_file_state(
-                repo_config["owner"],
-                repo_config["repo"],
-                repo_config["branch"],
-                remote_path,
-                token,
-            )
-
-            if remote_content is not None and remote_content == local_content:
-                print(f"    No changes: {remote_path}")
-                continue
-
-            if sha:
-                commit_message = f"chore(i18n): update {remote_path}"
-            else:
-                commit_message = f"chore(i18n): add {remote_path}"
-
-            if put_file_content(
-                repo_config["owner"],
-                repo_config["repo"],
-                repo_config["branch"],
-                remote_path,
-                local_content,
-                token,
-                commit_message,
-                sha,
-            ):
-                pushed_files.append(
-                    str(local_file.relative_to(translations_dir.parent))
-                )
-
-        except Exception as e:
-            print(f"    Error processing {local_file.name}: {e}")
-            continue
-
-    return pushed_files
+    return changes
 
 
 def push_repo(repo_config: RepoConfig, translations_dir: Path, token: str) -> list[str]:
-    """
-    Push all translation files for a repository.
+    owner = repo_config["owner"]
+    repo = repo_config["repo"]
+    branch = repo_config["branch"]
 
-    Args:
-        repo_config: Repository configuration
-        translations_dir: Base translations directory
-        token: GitHub authentication token
+    print(f"Processing repository: {owner}/{repo}:{branch}")
 
-    Returns:
-        list[str]: List of successfully pushed file paths
-    """
-    print(
-        f"Processing repository: {repo_config['owner']}/{repo_config['repo']}:{repo_config['branch']}"
-    )
+    if is_repo_archived(owner, repo, token):
+        print(f"  Skipping archived repository: {owner}/{repo}")
+        return []
 
-    pushed_files = []
+    pushed_files: list[str] = []
+    temp_dir = Path(tempfile.mkdtemp(prefix=f"push_{repo}_"))
 
-    for file_config in repo_config["files"]:
-        try:
-            files = push_file(repo_config, file_config, translations_dir, token)
-            pushed_files.extend(files)
-        except Exception as e:
-            print(f"  Error processing file config: {e}")
-            continue
+    try:
+        all_changes: list[tuple[Path, str]] = []
+        for file_config in repo_config["files"]:
+            changes = collect_changes_for_file_config(
+                repo_config, file_config, translations_dir
+            )
+            all_changes.extend(changes)
+
+        if not all_changes:
+            print("  No translation files to push")
+            return pushed_files
+
+        print(f"  Found {len(all_changes)} translation files to push")
+
+        repo_dir = clone_repo(owner, repo, branch, token, temp_dir)
+
+        files_changed = False
+        for local_file, remote_path in all_changes:
+            target_path = repo_dir / remote_path
+            target_path.parent.mkdir(parents=True, exist_ok=True)
+
+            existing_content = ""
+            if target_path.exists():
+                existing_content = target_path.read_text(encoding="utf-8")
+
+            new_content = local_file.read_text(encoding="utf-8")
+
+            if existing_content == new_content:
+                print(f"    No changes: {remote_path}")
+                continue
+
+            target_path.write_text(new_content, encoding="utf-8")
+            files_changed = True
+            pushed_files.append(str(local_file.relative_to(translations_dir.parent)))
+            print(f"    Updated: {remote_path}")
+
+        if not files_changed:
+            print("  All files are up to date")
+            return pushed_files
+
+        run_git_command(["add", "."], cwd=repo_dir)
+        run_git_command(["commit", "-m", "chore(i18n): update translations"], cwd=repo_dir)
+        run_git_command(["push", "origin", branch], cwd=repo_dir)
+        print(f"  Pushed {len(pushed_files)} files in a single commit")
+
+    except subprocess.CalledProcessError as e:
+        print(f"  Git operation failed: {e}")
+        if e.stderr:
+            print(f"    stderr: {e.stderr.strip()}")
+    except Exception as e:
+        print(f"  Error processing repository: {e}")
+    finally:
+        shutil.rmtree(temp_dir, ignore_errors=True)
 
     return pushed_files
 
 
 def push_translations(config: Config) -> None:
-    """
-    Push translation files from local translations/ directory to all configured repositories.
-
-    Args:
-        config: The configuration containing all repositories
-    """
     token = os.environ.get("BOT_TOKEN")
     if not token:
         print("Error: BOT_TOKEN environment variable is required")
@@ -349,7 +232,7 @@ def push_translations(config: Config) -> None:
         return
 
     translations_dir = get_translations_dir()
-    all_pushed_files = []
+    all_pushed_files: list[str] = []
 
     print(f"Pushing translation files from: {translations_dir}")
     print("=" * 60)
@@ -358,19 +241,13 @@ def push_translations(config: Config) -> None:
         try:
             pushed_files = push_repo(repo_config, translations_dir, token)
             all_pushed_files.extend(pushed_files)
-            if pushed_files:
-                print(
-                    f"  Pushed {len(pushed_files)} files from {repo_config['owner']}/{repo_config['repo']}"
-                )
         except Exception as e:
-            print(
-                f"Error processing repository {repo_config['owner']}/{repo_config['repo']}: {e}"
-            )
+            print(f"Error processing repository {repo_config['owner']}/{repo_config['repo']}: {e}")
             continue
         print()
 
     print("=" * 60)
-    print(f"Push completed!")
+    print("Push completed!")
     print(f"Total repositories processed: {len(config['repos'])}")
     print(f"Total files pushed: {len(all_pushed_files)}")
 
