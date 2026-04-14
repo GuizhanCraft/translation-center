@@ -1,0 +1,22 @@
+name: Auto Merge Crowdin PRs
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.review.state == 'approved' &&
+      github.event.pull_request.title == 'chore(i18n): update crowdin translations' &&
+      github.event.pull_request.user.login == 'GuizhanBot'
+    steps:
+      - name: Auto-merge PR
+        uses: pascalgn/automerge-action@v0.16.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_METHOD: squash
+          MERGE_COMMIT_MESSAGE: pull-request-title
+          MERGE_DELETE_BRANCH: true
+          MERGE_REQUIRED_APPROVING_REVIEW_COUNT: 1
