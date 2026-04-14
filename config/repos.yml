@@ -13,6 +13,7 @@ repos:
       folder: RebarMobs
       language_mapping:
           zh_CN: zh-CN
+          zh_TW: zh-TW
       files:
           - source: "src/main/resources/lang/en.yml"
             name: "en-US.yml"
