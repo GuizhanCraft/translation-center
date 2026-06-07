@@ -47,6 +47,57 @@ item:
     name: "Cursed Fire"
   quartz_and_steel:
     name: "Quartz and Steel"
+  mob_lasso:
+    status:
+      empty: "<red>Empty"
+      filled: "<green>Holding %entity-type%"
+    escape-after:
+      never: "<yellow>Never"
+      ticks: "%ticks% ticks (%seconds% seconds)"
+    capture:
+      not-empty: "<red>Cannot capture: this lasso is already holding %entity-type%."
+      wrong-type: "<red>This lasso cannot capture %entity-type%."
+      too-strong: "<red>Cannot capture: the target is too strong. Weaken it first."
+      soul-cage-spawned: "<red>Cannot capture mobs spawned by Soul Cage."
+      error: "<red>An error has occurred while capturing."
+    release:
+      invalid-block-type: "<red>The captured mob cannot be released at that location."
+      error: "<red>An error has occurred while releasing."
+  aqua_lasso:
+    name: "Aqua Lasso"
+    lore: |-
+      <arrow> A lasso designed for aquatic and amphibious mobs.
+
+      <arrow> <attr>Status:</attr> %status%
+      <arrow> <attr>Escape after:</attr> %escape-after%
+  golden_lasso:
+    name: "Golden Lasso"
+    lore: |-
+      <arrow> A golden lasso for most land animals.
+
+      <arrow> <attr>Status:</attr> %status%
+      <arrow> <attr>Escape after:</attr> %escape-after%
+  diamond_lasso:
+    name: "Diamond Lasso"
+    lore: |-
+      <arrow> A reinforced lasso for most land animals.
+
+      <arrow> <attr>Status:</attr> %status%
+      <arrow> <attr>Escape after:</attr> %escape-after%
+  hostile_lasso:
+    name: "Hostile Lasso"
+    lore: |-
+      <arrow> A dangerous lasso for weakened hostile mobs.
+
+      <arrow> <attr>Status:</attr> %status%
+      <arrow> <attr>Escape after:</attr> %escape-after%
+  creative_lasso:
+    name: "<#ff00ff>Creative Lasso"
+    lore: |-
+      <arrow> A lasso for almost every mob.
+
+      <arrow> <attr>Status:</attr> %status%
+      <arrow> <attr>Escape after:</attr> %escape-after%
   vile_sword:
     name: "Vile Sword"
     lore: |-
@@ -196,6 +247,7 @@ guide:
     tools: "Tools"
     weapons: "Weapons"
     mob_heads: "Mob Heads"
+    admin_items: "<light_purple>Admin Items"
 command:
   description: "RebarMobs main command"
   enchantment_book:
