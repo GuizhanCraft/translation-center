@@ -110,7 +110,7 @@ item:
       <arrow> 斩首者附魔可额外增加几率。
 
       <arrow> <attr>基础几率:</attr> %base-chance%
-      <arrow> <attr>斩首者几率:</attr> 每级%decapitator-chance%
+      <arrow> <attr>斩首者几率:</attr> 每级 %decapitator-chance%
   mob_head_bat:
     name: "蝙蝠头"
   mob_head_blaze:
