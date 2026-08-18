@@ -4,11 +4,8 @@ A unified repository to manage translations of my minecraft plugins.
 
 Currently include:
 
-- FastMachines
-- GuizhanCraft
-- UltimateGenerators2
-- GeneticChickengineering-Reborn
-- InfinityExpansion2
+- [InfinityExpansion2](https://github.com/GuizhanCraft/InfinityExpansion2)
+- [RebarMobs](https://github.com/GuizhanCraft/RebarMobs)
 
 This list might not be up to date, check the Crowdin project for details.
 
